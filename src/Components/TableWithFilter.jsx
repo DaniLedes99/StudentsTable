@@ -140,7 +140,13 @@ const TableWithFilter = () => {
               <td>{item.grade_level}</td>
               <td>{item.monthly__payment}</td>
               <td>{item.support_classes_payment}</td>
-              <td>{item.monthly__payment + item.support_classes_payment}</td>
+              <td>
+                $
+                {(
+                  parseFloat(item.monthly__payment.replace("$", "")) +
+                  parseFloat(item.support_classes_payment.replace("$", ""))
+                ).toFixed(2)}
+              </td>
               <td>{item.all_paid ? "Sí" : "No"}</td>
               <td>{item.birthday}</td>
             </tr>
