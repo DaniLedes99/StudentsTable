@@ -97,6 +97,7 @@ const TableWithFilter = () => {
           <option value="paid">Pagaron</option>
           <option value="unpaid">No Pagaron</option>
         </select>
+        <div className="withoutbutton"></div>
         <button onClick={handleReset} className="button">
           Reset
         </button>
@@ -118,25 +119,6 @@ const TableWithFilter = () => {
             </tr>
           </thead>
           <tbody>
-            {/* {data.map((item) => (
-              <tr key={item.id}>
-                <td>{item.id}</td>
-                <td>{item.name}</td>
-                <td>{item.lastname}</td>
-                <td>{item.phone}</td>
-                <td>{item.grade_level}</td>
-                <td>{item.monthly__payment}</td>
-                <td>{item.support_classes_payment}</td>
-                <td>
-                  {(
-                    parseFloat(item.monthly__payment.replace("$", "")) +
-                    parseFloat(item.support_classes_payment.replace("$", ""))
-                  ).toFixed(2)}
-                </td>
-                <td>{item.all_paid ? "Sí" : "No"}</td>
-                <td>{item.birthday}</td>
-              </tr>
-            ))} */}
             {data.map((item) => (
               <tr key={item.id}>
                 <td data-label="ID"> {item.id}</td>

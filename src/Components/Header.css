@@ -58,7 +58,7 @@ input:hover {
   color: red;
 }
 
-@media only screen and (max-width: 1349px) and (min-width: 300px) {
+@media only screen and (max-width: 1349px) and (min-width: 601px) {
   .header {
     padding: 2px;
     width: 100%;
@@ -79,5 +79,17 @@ input:hover {
   }
   .button:after {
     content: "";
+  }
+}
+
+@media only screen and (max-width: 601px) and (min-width: 200px) {
+  .header {
+    display: flex;
+    align-items: center;
+  }
+  .input,
+  .select {
+    max-width: 600px;
+    margin-bottom: 10px;
   }
 }
