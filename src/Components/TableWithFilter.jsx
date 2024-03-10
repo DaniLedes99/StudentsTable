@@ -108,17 +108,17 @@ const TableWithFilter = () => {
               <th>ID</th>
               <th>Nombre</th>
               <th>Apellido</th>
-              <th>Tel</th>
+              <th>Teléfono</th>
               <th>Grado</th>
               <th>Cuota</th>
-              <th>Clases de Apoyo</th>
+              <th>Particular</th>
               <th>Total</th>
-              <th>¿Todo Pago?</th>
+              <th>Pagó?</th>
               <th>Nacimiento</th>
             </tr>
           </thead>
           <tbody>
-            {data.map((item) => (
+            {/* {data.map((item) => (
               <tr key={item.id}>
                 <td>{item.id}</td>
                 <td>{item.name}</td>
@@ -128,7 +128,6 @@ const TableWithFilter = () => {
                 <td>{item.monthly__payment}</td>
                 <td>{item.support_classes_payment}</td>
                 <td>
-                  $
                   {(
                     parseFloat(item.monthly__payment.replace("$", "")) +
                     parseFloat(item.support_classes_payment.replace("$", ""))
@@ -136,6 +135,25 @@ const TableWithFilter = () => {
                 </td>
                 <td>{item.all_paid ? "Sí" : "No"}</td>
                 <td>{item.birthday}</td>
+              </tr>
+            ))} */}
+            {data.map((item) => (
+              <tr key={item.id}>
+                <td data-label="ID"> {item.id}</td>
+                <td data-label="Nombre">{item.name}</td>
+                <td data-label="Apellido">{item.lastname}</td>
+                <td data-label="Teléfono">{item.phone}</td>
+                <td data-label="Grado">{item.grade_level}</td>
+                <td data-label="Cuota">{item.monthly__payment}</td>
+                <td data-label="Particular">{item.support_classes_payment}</td>
+                <td data-label="Total">
+                  {(
+                    parseFloat(item.monthly__payment.replace("$", "")) +
+                    parseFloat(item.support_classes_payment.replace("$", ""))
+                  ).toFixed(2)}
+                </td>
+                <td data-label="Pagó?">{item.all_paid ? "Sí" : "No"}</td>
+                <td data-label="Nacimiento">{item.birthday}</td>
               </tr>
             ))}
           </tbody>

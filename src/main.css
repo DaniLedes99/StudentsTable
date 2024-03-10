@@ -4,17 +4,71 @@ body {
 
 table {
   width: 100%;
+  border-collapse: collapse;
+}
+
+.table {
+  width: 100%;
+  overflow-x: auto;
 }
 
 thead {
   background-color: #333;
   color: beige;
 }
+
 th,
 td {
   text-align: left;
-  padding: 16px;
+  padding: 8px;
 }
 tr:nth-child(even) {
   background-color: #f2f2f2;
+}
+
+th {
+  position: sticky;
+  top: 0;
+}
+
+@media screen and (max-width: 600px) {
+  @media screen and (max-width: 600px) {
+    .header {
+      flex-direction: column;
+    }
+
+    .button {
+      width: 100%;
+    }
+
+    .table,
+    .table thead,
+    .table tbody,
+    .table tr,
+    .table th,
+    .table td {
+      display: block;
+    }
+
+    .table thead {
+      display: none;
+    }
+
+    .table tr {
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      padding: 0.5rem;
+    }
+
+    .table td {
+      text-align: left;
+    }
+
+    .table td:before {
+      content: attr(data-label);
+      font-weight: bold;
+      display: inline-block;
+      width: 50%;
+    }
+  }
 }
