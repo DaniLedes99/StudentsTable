@@ -46,18 +46,6 @@ const TableWithFilter = () => {
     setData(filteredData);
   };
 
-  const handleSort = (value) => {
-    let sortedData = [...data];
-
-    if (value === "paid") {
-      sortedData.sort((a, b) =>
-        a.all_paid === b.all_paid ? 0 : a.all_paid ? -1 : 1
-      );
-    }
-
-    setData(sortedData);
-  };
-
   const handleReset = () => {
     setFilters(initialFilters);
     setData(jsonData);
@@ -108,51 +96,50 @@ const TableWithFilter = () => {
           <option value="paid">Pagaron</option>
           <option value="unpaid">No Pagaron</option>
         </select>
-        <button onClick={() => handleSort("paid")} className="button">
-          Ordenar por Pago
-        </button>
         <button onClick={handleReset} className="button">
           Resetear Filtros
         </button>
       </div>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Teléfono</th>
-            <th>Grado</th>
-            <th>Pago Mensual</th>
-            <th>Clases de Apoyo</th>
-            <th>Pago Total</th>
-            <th>¿Todo Pago?</th>
-            <th>Fecha de Nacimiento</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((item) => (
-            <tr key={item.id}>
-              <td>{item.id}</td>
-              <td>{item.name}</td>
-              <td>{item.lastname}</td>
-              <td>{item.phone}</td>
-              <td>{item.grade_level}</td>
-              <td>{item.monthly__payment}</td>
-              <td>{item.support_classes_payment}</td>
-              <td>
-                $
-                {(
-                  parseFloat(item.monthly__payment.replace("$", "")) +
-                  parseFloat(item.support_classes_payment.replace("$", ""))
-                ).toFixed(2)}
-              </td>
-              <td>{item.all_paid ? "Sí" : "No"}</td>
-              <td>{item.birthday}</td>
+      <div className="table">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Tel</th>
+              <th>Grado</th>
+              <th>Cuota</th>
+              <th>Clases de Apoyo</th>
+              <th>Total</th>
+              <th>¿Todo Pago?</th>
+              <th>Nacimiento</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {data.map((item) => (
+              <tr key={item.id}>
+                <td>{item.id}</td>
+                <td>{item.name}</td>
+                <td>{item.lastname}</td>
+                <td>{item.phone}</td>
+                <td>{item.grade_level}</td>
+                <td>{item.monthly__payment}</td>
+                <td>{item.support_classes_payment}</td>
+                <td>
+                  $
+                  {(
+                    parseFloat(item.monthly__payment.replace("$", "")) +
+                    parseFloat(item.support_classes_payment.replace("$", ""))
+                  ).toFixed(2)}
+                </td>
+                <td>{item.all_paid ? "Sí" : "No"}</td>
+                <td>{item.birthday}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
