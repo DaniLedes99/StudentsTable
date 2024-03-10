@@ -56,7 +56,7 @@ const TableWithFilter = () => {
       <div className="header">
         <input
           type="text"
-          placeholder="Filtrar por nombre"
+          placeholder="Nombre"
           name="name"
           value={filters.name}
           onChange={handleInputChange}
@@ -64,7 +64,7 @@ const TableWithFilter = () => {
         />
         <input
           type="text"
-          placeholder="Filtrar por apellido"
+          placeholder="Apellido"
           name="lastname"
           value={filters.lastname}
           onChange={handleInputChange}
@@ -72,7 +72,7 @@ const TableWithFilter = () => {
         />
         <input
           type="text"
-          placeholder="Filtrar por grado"
+          placeholder="Grado"
           name="grade"
           value={filters.grade}
           onChange={handleInputChange}
@@ -80,11 +80,12 @@ const TableWithFilter = () => {
         />
         <input
           type="text"
-          placeholder="Filtrar por año de nacimiento"
+          placeholder="Año de Nacimiento"
           name="year"
           value={filters.year}
           onChange={handleInputChange}
           className="input"
+          id="mediaqueryinputAñodeNacimiento"
         />
         <select
           name="paid"
@@ -97,7 +98,7 @@ const TableWithFilter = () => {
           <option value="unpaid">No Pagaron</option>
         </select>
         <button onClick={handleReset} className="button">
-          Resetear Filtros
+          Reset
         </button>
       </div>
       <div className="table">
