@@ -43,7 +43,6 @@
 
 .input {
   width: 100%;
-  /*  max-width: 220px; */
   height: 45px;
   padding: 5px;
   border-radius: 12px;
@@ -80,11 +79,9 @@
 @media only screen and (max-width: 601px) and (min-width: 200px) {
   .header {
     display: flex;
-    align-items: center;
     margin-bottom: 10px;
   }
-  .input,
-  .select {
+  .input {
     margin-bottom: 10px;
     max-width: 600px;
   }
