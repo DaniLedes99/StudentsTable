@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import jsonData from "../MOCK_DATA (1).json";
 import "./Header.css";
+import Input from "./Input";
 
 const initialFilters = {
   name: "",
@@ -54,7 +55,7 @@ const TableWithFilter = () => {
   return (
     <div className="all">
       <div className="header">
-        <input
+        <Input
           type="text"
           placeholder="Nombre"
           name="name"
@@ -62,7 +63,7 @@ const TableWithFilter = () => {
           onChange={handleInputChange}
           className="input"
         />
-        <input
+        <Input
           type="text"
           placeholder="Apellido"
           name="lastname"
@@ -70,7 +71,7 @@ const TableWithFilter = () => {
           onChange={handleInputChange}
           className="input"
         />
-        <input
+        <Input
           type="text"
           placeholder="Grado"
           name="grade"
@@ -78,20 +79,19 @@ const TableWithFilter = () => {
           onChange={handleInputChange}
           className="input"
         />
-        <input
+        <Input
           type="text"
           placeholder="Año de Nacimiento"
           name="year"
           value={filters.year}
           onChange={handleInputChange}
           className="input"
-          id="mediaqueryinputAñodeNacimiento"
         />
         <select
           name="paid"
           value={filters.paid}
           onChange={handleInputChange}
-          className="select input"
+          className="input"
         >
           <option value="">Todos</option>
           <option value="paid">Pagaron</option>
