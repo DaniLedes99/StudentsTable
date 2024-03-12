@@ -1,9 +1,10 @@
-import TableWithFilter from "./Components/TableWithFilter";
+
+import Dado from "./Components/Dado";
 
 function App() {
   return (
     <>
-      <TableWithFilter />
+      <Dado />
     </>
   );
 }
