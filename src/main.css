@@ -1,3 +1,9 @@
+:root {
+  --dice-x-final-rotation: 360deg;
+  --dice-y-final-rotation: 90deg;
+  --dice-z-final-rotation: 360deg;
+}
+
 body {
   padding: 0.5rem;
 }

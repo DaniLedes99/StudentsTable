@@ -1,1 +1,0 @@
-{/* {contador.map((count, index)=>(<li key={index+1}>{'Numero tirado'${index+1}:${count}}</li>))} */}
